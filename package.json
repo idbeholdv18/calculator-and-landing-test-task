@@ -1,0 +1,12 @@
+{
+  "name": "calculator-and-landing-test-task",
+  "version": "1.0.0",
+  "description": "test task for core-lab company frontend engineer interview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alim Sadullaev <alimsadullaev18@gmail.com>",
+  "license": "ISC"
+}

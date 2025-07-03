@@ -15,6 +15,6 @@ export const buildWebpackConfig = (config: T_WebpackConfigProps): Configuration 
     },
     resolve: buildResolve(),
     module: buildModule(),
-    plugins: buildPlugins(),
+    plugins: buildPlugins(config.paths),
   }
 }

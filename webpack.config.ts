@@ -9,6 +9,7 @@ const configuration = (configuration: any): Configuration => {
     paths: {
       entry: path.resolve(__dirname, "src", "index.ts"),
       output: path.resolve(__dirname, "dist"),
+      template: path.resolve(__dirname, "public", "index.html"),
     }
   })
 }

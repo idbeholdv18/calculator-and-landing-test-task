@@ -7,7 +7,7 @@ const configuration = (configuration: any): Configuration => {
   return buildWebpackConfig({
     mode: "development",
     paths: {
-      entry: path.resolve(__dirname, "src", "index.ts"),
+      entry: path.resolve(__dirname, "src", "index.tsx"),
       output: path.resolve(__dirname, "dist"),
       template: path.resolve(__dirname, "public", "index.html"),
     }

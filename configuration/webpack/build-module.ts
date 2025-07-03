@@ -1,7 +1,7 @@
 import type { ModuleOptions, RuleSetRule } from "webpack"
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-export const buildModule = (): ModuleOptions => {
+export const buildModule = (isDev: boolean): ModuleOptions => {
   const rules: RuleSetRule[] = [];
 
   const ts_loader: RuleSetRule = {
@@ -13,7 +13,7 @@ export const buildModule = (): ModuleOptions => {
   const style_loader: RuleSetRule = {
     test: /\.s?[ac]ss$/i,
     use: [
-      MiniCssExtractPlugin.loader,
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
         loader: 'css-loader',
         options: {

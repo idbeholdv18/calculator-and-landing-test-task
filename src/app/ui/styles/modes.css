@@ -1,0 +1,17 @@
+.light_mode {
+    --bg-contrast: #ffffff;
+    --bg-primary: #e6e6e6;
+    --bg-secondary: #9f9f9f;
+    --fg-contrast: #000000;
+    --fg-primary: #0d0d0d;
+    --fg-secondary: #121212;
+}
+
+.dark_mode {
+    --bg-contrast: #000000;
+    --bg-primary: #0d0d0d;
+    --bg-secondary: #121212;
+    --fg-contrast: #ffffff;
+    --fg-primary: #e6e6e6;
+    --fg-secondary: #9f9f9f;
+}

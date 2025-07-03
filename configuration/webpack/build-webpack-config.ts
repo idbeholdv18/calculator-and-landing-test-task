@@ -17,7 +17,7 @@ export const buildWebpackConfig = (config: T_WebpackConfigProps): Configuration 
       path: config.paths.output,
       clean: true,
     },
-    resolve: buildResolve(),
+    resolve: buildResolve(config.paths),
     module: buildModule(config.isDev),
     plugins: buildPlugins(config.paths),
     devServer: config.isDev ? buildDevServer(config.paths, config.port) : undefined,

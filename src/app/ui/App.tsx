@@ -1,6 +1,6 @@
 import { FC } from "react";
 import clsx from "clsx";
-import { Button } from "../../shared/ui/button/Button";
+import { Button } from "@/shared/ui/button";
 
 interface I_AppProps {
   className?: string;

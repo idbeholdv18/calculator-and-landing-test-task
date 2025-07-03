@@ -3,4 +3,5 @@ export type T_WebpackConfigPaths = {
   output: string,
   template: string,
   publicPath: string,
+  src: string,
 }

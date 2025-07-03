@@ -3,3 +3,7 @@
 @import "modes.css";
 
 @import "defaults.css";
+
+body {
+    background-color: var(--bg-primary);
+}

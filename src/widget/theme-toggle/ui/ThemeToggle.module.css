@@ -1,0 +1,23 @@
+.group {
+    padding: 2px;
+    border: 1px solid var(--border-primary);
+    width: fit-content;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+}
+
+.option {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 4px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+.active {
+    background-color: var(--bg-secondary);
+}

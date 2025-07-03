@@ -5,6 +5,7 @@
     --fg-contrast: #000000;
     --fg-primary: #0d0d0d;
     --fg-secondary: #121212;
+    --border-primary: #616161;
 }
 
 .dark {
@@ -14,4 +15,5 @@
     --fg-contrast: #ffffff;
     --fg-primary: #e6e6e6;
     --fg-secondary: #9f9f9f;
+    --border-primary: #464646;
 }

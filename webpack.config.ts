@@ -10,6 +10,7 @@ const configuration = (configuration: any): Configuration => {
       entry: path.resolve(__dirname, "src", "index.tsx"),
       output: path.resolve(__dirname, "dist"),
       template: path.resolve(__dirname, "public", "index.html"),
+      publicPath: path.resolve(__dirname, "public"),
     }
   })
 }

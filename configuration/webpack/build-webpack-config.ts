@@ -18,8 +18,9 @@ export const buildWebpackConfig = (config: T_WebpackConfigProps): Configuration 
       clean: true,
     },
     resolve: buildResolve(),
-    module: buildModule(),
+    module: buildModule(config.isDev),
     plugins: buildPlugins(config.paths),
-    devServer: buildDevServer(config.paths, 9000),
+    devServer: config.isDev ? buildDevServer(config.paths, config.port) : undefined,
+    devtool: config.isDev ? 'inline-source-map' : undefined,
   }
 }

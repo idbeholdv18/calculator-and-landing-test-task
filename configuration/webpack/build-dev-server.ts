@@ -6,6 +6,6 @@ export const buildDevServer = (paths: T_WebpackConfigPaths, port: number): any =
       directory: paths.publicPath,
     },
     compress: true,
-    port: port || 9000,
+    port,
   }
 }

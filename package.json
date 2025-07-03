@@ -4,8 +4,8 @@
   "description": "test task for core-lab company frontend engineer interview",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack",
-    "start:dev": "webpack serve",
+    "build:dev": "webpack --env mode=development",
+    "start:dev": "webpack serve --env port=3000",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [],

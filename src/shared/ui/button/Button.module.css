@@ -1,0 +1,96 @@
+.button {
+    --text-color: currentColor;
+    --text-size: 12px;
+    --text-weight: normal;
+    color: var(--text-color);
+}
+
+.filled.contrast {
+    background-color: var(--fg-contrast);
+    --text-color: var(--bg-contrast);
+}
+
+.filled.primary {
+    background-color: var(--fg-primary);
+    --text-color: var(--bg-primary);
+}
+
+.filled.secondary {
+    background-color: var(--fg-secondary);
+    --text-color: var(--bg-secondary);
+}
+
+.outline.contrast {
+    --text-color: var(--fg-contrast);
+    border: solid 2px var(--fg-contrast);
+}
+
+.outline.primary {
+    --text-color: var(--fg-primary);
+    border: solid 2px var(--fg-primary);
+}
+
+.outline.secondary {
+    --text-color: var(--fg-secondary);
+    border: solid 2px var(--fg-secondary);
+}
+
+.xs {
+    padding: 4px 8px;
+    --text-size: 12px;
+    --text-weight: 400;
+}
+
+.sm {
+    padding: 4px 12px;
+    --text-size: 14px;
+    --text-weight: 400;
+}
+
+.md {
+    padding: 8px 16px;
+    --text-size: 16px;
+    --text-weight: 400;
+}
+
+.lg {
+    padding: 12px 20px;
+    --text-size: 18px;
+    --text-weight: 400;
+}
+
+.xl {
+    padding: 12px 24px;
+    --text-size: 20px;
+    --text-weight: 400;
+}
+
+.rxs {
+    border-radius: 0.1em;
+}
+
+.rsm {
+    border-radius: 0.1em;
+}
+
+.rmd {
+    border-radius: 0.2em;
+}
+
+.rlg {
+    border-radius: 0.4em;
+}
+
+.rxl {
+    border-radius: 0.5em;
+}
+
+.rfull {
+    border-radius: 100%;
+}
+
+.text {
+    color: var(--text-color);
+    font-size: var(--text-size);
+    font-weight: var(--text-weight);
+}

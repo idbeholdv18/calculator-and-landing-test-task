@@ -20,6 +20,7 @@ const configuration = (env: T_WebpackProps): Configuration => {
       output: path.resolve(__dirname, "dist"),
       template: path.resolve(__dirname, "public", "index.html"),
       publicPath: path.resolve(__dirname, "public"),
+      src: path.resolve(__dirname, "src"),
     },
     isDev: IS_DEV,
     port: PORT || 9000,

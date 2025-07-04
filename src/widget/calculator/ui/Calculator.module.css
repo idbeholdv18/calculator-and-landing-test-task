@@ -3,12 +3,12 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 4fr repeat(5, 1fr);
     grid-template-areas:
-            "display display display display"
-            "button button button button"
-            "button button button button"
-            "button button button button"
-            "button button button button"
-            "button button button button";
+    "display display display display"
+    "button button button button"
+    "button button button button"
+    "button button button button"
+    "button button button button"
+    "button button button button";
     gap: 0.5rem;
     place-items: stretch;
     place-content: stretch;
@@ -16,9 +16,37 @@
     background: var(--bg-contrast);
     border: 2px solid var(--border-primary);
     box-shadow: 1px 1px 36px -12px var(--shadow-color);
-    -webkit-box-shadow: 1px 1px 36px -12px var(--shadow-color);
-    -moz-box-shadow: 1px 1px 36px -12px var(--shadow-color);
     border-radius: 16px;
+    width: 60%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.displayLayout {
+    grid-area: display;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.displayWrapper {
+    position: absolute;
+    inset: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    direction: rtl;
+    mask-image: linear-gradient(to right, transparent, black 20px, black);
+
+}
+
+.displayText {
+    position: absolute;
+    font-size: 2.5rem;
+    white-space: nowrap;
+    direction: ltr;
+    color: var(--fg-contrast);
+    padding-left: 1rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -32,8 +60,26 @@
     }
 }
 
+.displayText::-webkit-scrollbar {
+    height: 4px;
+}
 
+.displayText::-webkit-scrollbar-track {
+    background: transparent;
+}
 
-.displayLayout {
-    grid-area: display;
+.displayText::-webkit-scrollbar-thumb {
+    background-color: var(--border-primary);
+    border-radius: 2px;
+}
+
+.displayWrapper::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    pointer-events: none;
+    box-shadow: inset 10px 0 10px -10px rgba(0, 0, 0, 0.5);
 }

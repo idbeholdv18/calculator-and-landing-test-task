@@ -5,5 +5,14 @@
     align-items: center;
     min-height: 100vh;
     gap: 2rem;
-    padding-top: 64px;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+    max-height: 100vh;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding-top: 0;
+        max-height: none;
+    }
 }

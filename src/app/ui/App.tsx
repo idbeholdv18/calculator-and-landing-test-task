@@ -13,9 +13,9 @@ export const App: FC<I_AppProps> = (props) => {
   return (
     <div>
       <Container className={ clsx(cls.container) }>
+        <Calculator/>
         <h1>Made by @idbeholdv18</h1>
         <ThemeToggle/>
-        <Calculator/>
       </Container>
     </div>
   )

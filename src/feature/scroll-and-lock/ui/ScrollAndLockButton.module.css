@@ -1,0 +1,11 @@
+.scrollAndLockButton {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .scrollAndLockButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

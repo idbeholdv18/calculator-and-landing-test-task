@@ -22,6 +22,7 @@ const buttons = ["AC", "±", "<", "/", "7", "8", "9", "*", "4", "5", "6", "-", "
 
 export const Calculator: FC<I_CalculatorProps> = (props) => {
   const [, forceUpdate] = useReducer(x => x + 1, 0);
+  const [activeKey, setActiveKey] = useState<string | null>(null);
 
   const engine = useRef(new CalculatorEngine()).current;
   const invoker = useRef(new CalculatorInvoker()).current;
@@ -55,37 +56,36 @@ export const Calculator: FC<I_CalculatorProps> = (props) => {
     forceUpdate();
   };
 
+  const normalizeKey = ({ key, code }: { key: string, code: string }): string => {
+    if (key === "Enter") return "=";
+    if (key === "Backspace") return "<";
+    if (key === "Escape") return "AC";
+    if (code === "KeyS") return "±";
+    return key;
+  };
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const { key, code } = e;
 
-      if (
-        (key >= '0' && key <= '9') ||
-        key === '.' ||
-        key === '+' || key === '-' || key === '*' || key === '/' ||
-        key === 'Enter' || key === '=' || key === 'Backspace' || key === 'Escape'
-      ) {
-        e.preventDefault();
+      const normalized_key = normalizeKey({ key, code });
+      if (!buttons.includes(normalized_key)) return;
 
-        if (key === 'Enter' || key === '=') {
-          handleClick("=");
-        } else if (key === 'Backspace') {
-          handleClick("<");
-        } else if (key === 'Escape') {
-          handleClick("AC");
-        } else {
-          handleClick(key);
-        }
-      }
+      e.preventDefault();
+      setActiveKey(normalized_key);
+      handleClick(normalized_key);
+    };
 
-      if (code === 'KeyS') {
-        e.preventDefault();
-        handleClick("+_");
-      }
+    const handleKeyUp = (e: KeyboardEvent) => {
+      setActiveKey(null);
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    };
   }, []);
 
 
@@ -106,6 +106,7 @@ export const Calculator: FC<I_CalculatorProps> = (props) => {
             size="xl"
             onClick={ () => handleClick(el) }
             disabled={ el === "%" }
+            isPressed={activeKey === el}
           >
             { el }
           </Button>

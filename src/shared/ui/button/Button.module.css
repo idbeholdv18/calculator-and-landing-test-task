@@ -1,22 +1,50 @@
 .button {
+    --bg-color: transparent;
+    --bg-hover: var(--bg-color);
+    --bg-active: var(--bg-hover);
     --text-color: currentColor;
-    --text-size: 12px;
-    --text-weight: normal;
+
+    background-color: var(--bg-color);
     color: var(--text-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .button:hover {
+        background-color: var(--bg-hover);
+    }
+}
+
+.button:active {
+    background-color: var(--bg-active);
+    transform: scale(0.96);
+    transition: 0.1s ease-out;
+}
+
+.pressed {
+    transform: scale(0.96);
+    background-color: var(--bg-active);
+    transition: 0.1s ease;
 }
 
 .filled.contrast {
-    background-color: var(--fg-contrast);
+    --bg-color: var(--fg-contrast);
+    --bg-hover: color-mix(in srgb, var(--fg-contrast) 90%, var(--bg-contrast));
+    --bg-active: color-mix(in srgb, var(--fg-contrast) 80%, var(--bg-contrast));
     --text-color: var(--bg-contrast);
 }
 
 .filled.primary {
-    background-color: var(--fg-primary);
+    --bg-color: var(--fg-primary);
+    --bg-hover: color-mix(in srgb, var(--fg-primary) 90%, var(--bg-contrast));
+    --bg-active: color-mix(in srgb, var(--fg-primary) 80%, var(--bg-contrast));
     --text-color: var(--bg-primary);
 }
 
 .filled.secondary {
-    background-color: var(--fg-secondary);
+    --bg-color: var(--fg-secondary);
+    --bg-hover: color-mix(in srgb, var(--fg-secondary) 90%, var(--bg-contrast));
+    --bg-active: color-mix(in srgb, var(--fg-secondary) 80%, var(--bg-contrast));
     --text-color: var(--bg-secondary);
 }
 

@@ -1,4 +1,5 @@
 .light {
+    /* colors */
     --bg-contrast: #ffffff;
     --bg-primary: #e6e6e6;
     --bg-secondary: #9f9f9f;
@@ -6,9 +7,13 @@
     --fg-primary: #0d0d0d;
     --fg-secondary: #121212;
     --border-primary: #616161;
+
+    /* shadows */
+    --shadow-color: rgba(13, 13, 13, 0.2);
 }
 
 .dark {
+    /* colors */
     --bg-contrast: #000000;
     --bg-primary: #0d0d0d;
     --bg-secondary: #121212;
@@ -16,4 +21,7 @@
     --fg-primary: #e6e6e6;
     --fg-secondary: #9f9f9f;
     --border-primary: #464646;
+
+    /* shadows */
+    --shadow-color: rgba(192, 192, 192, 0.2);
 }

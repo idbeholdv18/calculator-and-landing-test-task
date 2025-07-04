@@ -1,0 +1,39 @@
+.calculatorLayout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 4fr repeat(5, 1fr);
+    grid-template-areas:
+            "display display display display"
+            "button button button button"
+            "button button button button"
+            "button button button button"
+            "button button button button"
+            "button button button button";
+    gap: 0.5rem;
+    place-items: stretch;
+    place-content: stretch;
+    padding: 1.5rem 1rem 2rem;
+    background: var(--bg-contrast);
+    border: 2px solid var(--border-primary);
+    box-shadow: 1px 1px 36px -12px var(--shadow-color);
+    -webkit-box-shadow: 1px 1px 36px -12px var(--shadow-color);
+    -moz-box-shadow: 1px 1px 36px -12px var(--shadow-color);
+    border-radius: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    .calculatorLayout {
+        width: 100%;
+        height: 100dvh;
+        border: none;
+        border-top: 2px solid var(--border-primary);
+        border-bottom: 2px solid var(--border-primary);
+        box-shadow: none;
+    }
+}
+
+
+
+.displayLayout {
+    grid-area: display;
+}

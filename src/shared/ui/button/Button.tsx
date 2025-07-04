@@ -9,9 +9,10 @@ interface I_ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "filled" | "outline";
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   rounded?: "rxs" | "rsm" | "rmd" | "rlg" | "rxl" | "rfull";
+  isPressed?: boolean;
 }
 
-export const Button: FC<I_ButtonProps> = ({ children, className, color, variant, size, rounded, ...props }) => {
+export const Button: FC<I_ButtonProps> = ({ children, className, color, variant, size, rounded, isPressed, ...props }) => {
   const isStringChild = typeof children === "string";
 
   return (
@@ -19,9 +20,11 @@ export const Button: FC<I_ButtonProps> = ({ children, className, color, variant,
       className={
         clsx(
           className,
+          cls.button,
           cls[color || "primary"],
           cls[variant || "filled"],
           cls[size || "md"],
+          isPressed && cls.pressed,
           rounded && cls[rounded]
         )
       }
